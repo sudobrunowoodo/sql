@@ -29,3 +29,6 @@ WHERE GDP >= 1000000000000
 
 SELECT name, capital FROM world
  WHERE LENGTH(name) = LENGTH(capital)
+
+SELECT name, capital FROM world
+WHERE capital LIKE concat(LEFT(name, LENGTH(name)-(LENGTH(name)-1)), '%') AND capital != name
